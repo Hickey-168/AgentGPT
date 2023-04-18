@@ -6,10 +6,7 @@ import { GPT_35_TURBO } from "./constants";
 
 export const createModel = (settings: ModelSettings) =>
   new OpenAI({
-    openAIApiKey:
-      settings.customApiKey === ""
-        ? process.env.OPENAI_API_KEY
-        : settings.customApiKey,
+    openAIApiKey: process.env.OPENAI_API_KEY,
     temperature: settings.customTemperature || 0.9,
     modelName:
       settings.customModelName === "" ? GPT_35_TURBO : settings.customModelName,

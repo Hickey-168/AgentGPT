@@ -78,7 +78,7 @@ class AutonomousAgent {
     }
 
     this.numLoops += 1;
-    const maxLoops = this.maxLoops();
+    const maxLoops = 100;
     if (this.numLoops > maxLoops) {
       this.sendLoopMessage();
       this.shutdown();
@@ -125,16 +125,6 @@ class AutonomousAgent {
     }
 
     await this.loop();
-  }
-
-  private maxLoops() {
-    const defaultLoops = !!this.session?.user.subscriptionId
-      ? DEFAULT_MAX_LOOPS_PAID
-      : DEFAULT_MAX_LOOPS_FREE;
-
-    return !!this.modelSettings.customApiKey
-      ? this.modelSettings.customMaxLoops || DEFAULT_MAX_LOOPS_CUSTOM_API_KEY
-      : defaultLoops;
   }
 
   async getInitialTasks(): Promise<string[]> {

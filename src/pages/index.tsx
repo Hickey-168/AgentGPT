@@ -118,20 +118,20 @@ const Home: NextPage = () => {
         show={showHelpDialog}
         close={() => setShowHelpDialog(false)}
       />
-      <SettingsDialog
-        reactModelStates={{
-          customApiKey,
-          setCustomApiKey,
-          customModelName,
-          setCustomModelName,
-          customTemperature,
-          setCustomTemperature,
-          customMaxLoops,
-          setCustomMaxLoops,
-        }}
-        show={showSettingsDialog}
-        close={() => setShowSettingsDialog(false)}
-      />
+      {/*<SettingsDialog*/}
+      {/*  reactModelStates={{*/}
+      {/*    customApiKey,*/}
+      {/*    setCustomApiKey,*/}
+      {/*    customModelName,*/}
+      {/*    setCustomModelName,*/}
+      {/*    customTemperature,*/}
+      {/*    setCustomTemperature,*/}
+      {/*    customMaxLoops,*/}
+      {/*    setCustomMaxLoops,*/}
+      {/*  }}*/}
+      {/*  show={showSettingsDialog}*/}
+      {/*  close={() => setShowSettingsDialog(false)}*/}
+      {/*/>*/}
       <main className="flex min-h-screen flex-row">
         <Drawer
           showHelp={() => setShowHelpDialog(true)}
